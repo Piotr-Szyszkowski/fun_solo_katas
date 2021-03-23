@@ -14,14 +14,22 @@
 ], 'root') should return 9
 */
 
-function countVeg(basket, type) {
+function countVeg(basket, vegType) {
   const validVegTypes = ["root", "leaf", "legume", "bulb", "brassica"];
-  if (typeof basket !== "object" || typeof type !== "string") {
+  let vegCount = 0;
+  function getRightVeg(obj) {
+    if (obj.type === vegType) {
+      vegCount += obj.quantity;
+    };
+  };
+  if (typeof basket !== "object" || typeof vegType !== "string") {
     return "Accepting only an array and a string!";
   };
-  if (validVegTypes.includes(type) === false) {
+  if (validVegTypes.includes(vegType) === false) {
     return "Invalid vegetable type entered";
   };
-}
+  basket.forEach(getRightVeg);
+  return vegCount;
+};
 
 module.exports = countVeg;
