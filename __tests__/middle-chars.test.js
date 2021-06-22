@@ -1,15 +1,13 @@
 //const { describe } = require('yargs'); - mac vs code adds this. please delete
 //const { expect } = require('@jest/globals');
 
+const middleChar = require("../katas/middle-char");
 
-const middleChar = require('../katas/middle-char');
-
-describe("Tests for middleChar", () =>{
+describe("Tests for middleChar", () => {
   it("TEST 1 - middleChar returns an empty string when passed an empty string\n", () => {
     let expectedOutput = middleChar("");
     let actualOutput = "";
     expect(expectedOutput).toEqual(actualOutput);
-
   });
   it("TEST 2 - middleChar returns input string when passed a string of length 1 or 2\n", () => {
     let expectedOutput = middleChar("a");
